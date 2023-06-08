@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.slider.active {
+  display: block;
+}
+
+.flecha {
+  position: absolute;
+  width: max-content;
+  width: 100%;
+  top: 10rem;
+  padding-inline: 2rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.flecha img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.toggle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: 1px solid white;
+  outline: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  display: none;
+}
+
+.toggle span {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: white;
+  outline: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.toggle span:nth-child(1) {
+  transform: translateY(-10px);
+  width: 18px;
+  left: 10px;
+}
+
+.toggle.active span:nth-child(1) {
+  width: 25px;
+  transform: translateY(0px) rotate(45deg);
+  transition-delay: 0.125s;
+}
+
+.toggle span:nth-child(2) {
+  transform: translateY(10px);
+  width: 13px;
+  left: 10px;
+}
+
+.toggle.active span:nth-child(2) {
+  width: 25px;
+  transform: translateY(0px) rotate(315deg);
+  transition-delay: 0.25s;
+}
+
+.toggle.active span:nth-child(3) {
+  transform: translateX(60px);
+}
+
+.hero {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.slider {
+  display: none;
+}
+
+.sliderUno {
+  background: url(img/fondo-12.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.sliderDos {
+  background: url(img/fondo-2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.sliderTres {
+  background: url(img/fondo-3.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+header .logo img {
+  width: 150px;
+}
+
+header .navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+header .navbar ul li {
+  list-style: none;
+}
+
+header .navbar ul li a {
+  position: relative;
+  color: #eeeded;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+header .navbar ul li a::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 0%;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+header .navbar ul li a:hover::after {
+  width: 100%;
+}
+header .navbar ul li a:hover {
+  color: white;
+}
+
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white;
+  width: max-content;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: white;
+  color: blue;
+}
+
+.sliderDos .btn:hover,
+.sliderTres .btn:hover {
+  color: black;
+}
+
+.contenedor {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.text_container {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 7rem;
+  gap: 1rem;
+}
+
+.text_container h1 {
+  font-size: 2.76rem;
+  color: white;
+}
+
+.text_container p {
+  font-size: 0.9rem;
+  color: #b9b9b9;
+}
+
+.sliderTres .text_container p {
+  color: #e6e6e6;
+}
+
+.text_container h3 {
+  color: white;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.text_container .cuadrados {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.text_container .cuadrados div {
+  width: 100px;
+  height: 100px;
+  background: #0808b9;
+  color: #b9b9b9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+.text_container .cuadrados div:first-child {
+  background: rgb(45, 114, 193);
+}
+
+.text_container .cuadrados div:first-child p:last-child {
+  background: rgb(55, 136, 221);
+  color: white;
+}
+.text_container .cuadrados div:first-child p:first-child {
+  color: white;
+}
+
+.sliderDos .text_container .cuadrados div {
+  background: #292929;
+}
+
+.sliderTres .text_container .cuadrados div {
+  background: #858585;
+}
+
+.sliderDos .text_container .cuadrados div:first-child {
+  background: #ca0c0c;
+}
+
+.sliderDos .text_container .cuadrados div:first-child p:last-child {
+  background: #4d0202;
+}
+
+.sliderTres .text_container .cuadrados div:first-child {
+  background: #050505;
+}
+
+.sliderTres .text_container .cuadrados div:first-child p:last-child {
+  background: #ca0c0c;
+}
+
+.text_container .cuadrados div p:first-child {
+  font-size: 0.65rem;
+}
+
+.text_container .cuadrados div p:last-child {
+  background: #3434f5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.2rem 0;
+  margin-top: 0.2rem;
+}
+
+.sliderDos .text_container .cuadrados div p:last-child {
+  background: black;
+}
+
+.sliderTres .text_container .cuadrados div p:last-child {
+  background: #636363;
+}
+
+.text_container .cuadrados div span {
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  /* padding-block: 0.5rem; */
+}
+
+@media screen and (max-width: 900px) {
+  header .navbar ul {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    max-width: 350px;
+    background-color: #00009c;
+    flex-direction: column;
+    overflow-x: hidden;
+    display: flex;
+    /* display: none; */
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 1;
+  }
+
+  .toggle {
+    display: flex;
+    position: absolute;
+    top: 36px;
+    right: 70px;
+    z-index: 999;
+  }
+
+  header .navbar ul.show_menu {
+    /* display: flex; */
+    right: 0;
+  }
+
+  .sliderUno {
+    background: url(img/fondo-1-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  .sliderDos {
+    background: url(img/fondo-2-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  .sliderTres {
+    background: url(img/fondo-3-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .text_container .cuadrados,
+  .text_container h3,
+  .text_container p:nth-last-child(2),
+  .text_container p:nth-child(2) {
+    display: none;
+  }
+
+  .text_container {
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .text_container h1 {
+    position: absolute;
+    top: 22%;
+    padding-inline: 3.5rem;
+    font-size: 1.7rem;
+  }
+
+  .text_container .btn {
+    position: absolute;
+    bottom: 10%;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .text_container h1 {
+    position: absolute;
+    top: 14%;
+    padding-inline: 4rem;
+    font-size: 2.7rem;
+  }
+}
